@@ -46,7 +46,7 @@ export function read(unixUser: string = 'ci') {
         throw err;
       }
       if (hasNewName) {
-        const err = new Error(`The user "${name}" already exists`);
+        const err = new Error(`The user "${newName}" already exists`);
         (err as any).code = 'DUPLICATE_USER_NAME';
         throw err;
       }
@@ -96,7 +96,7 @@ class AuthorizedKey {
 
   public getName() {
     const match = /NAME\=\\\"([^\\]+)\\\"/.exec(this._value);
-    return match[1];
+    return match![1];
   }
   public setName(name: string) {
     this._value = this._value.replace(
@@ -107,7 +107,7 @@ class AuthorizedKey {
 
   public getApps() {
     const match = /APPS\=\\\"([^\\]+)\\\"/.exec(this._value);
-    return match[1].split(',');
+    return match![1].split(',');
   }
   public setApps(apps: readonly string[]) {
     this._value = this._value.replace(
