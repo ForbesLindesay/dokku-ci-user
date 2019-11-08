@@ -1,5 +1,5 @@
-import add from '../';
+// import * as Keys from '../';
 
 test('add', () => {
-  expect(add(1, 2)).toBe(3);
+  // TODO
 });

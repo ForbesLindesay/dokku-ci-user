@@ -1,9 +1,13 @@
 {
-  "name": "@forbeslindesay/npm-package-template",
-  "description": "npm-package-template",
+  "name": "dokku-ci-user",
+  "description": "Manage users with very restricted permissions to push to a set of apps on a dokku server.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "repository": "git@github.com:ForbesLindesay/npm-package-template.git",
+  "bin": {
+    "dokku-ci-user": "./lib/cli.js",
+    "dokku-ci-user-run": "./lib/run.js"
+  },
+  "repository": "git@github.com:ForbesLindesay/dokku-ci-user.git",
   "author": "Forbes Lindesay <forbes@lindesay.co.uk>",
   "license": "MIT",
   "scripts": {
@@ -15,10 +19,14 @@
     "test": "jest",
     "ci:test": "jest --silent --maxWorkers=2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "concat-stream": "^2.0.0"
+  },
   "devDependencies": {
     "@forbeslindesay/tsconfig": "^2.0.0",
+    "@types/concat-stream": "^1.6.0",
     "@types/jest": "^24.0.18",
+    "@types/node": "^12.12.6",
     "husky": "^3.0.8",
     "jest": "^24.9.0",
     "lint-staged": "^9.4.2",
@@ -26,7 +34,7 @@
     "rimraf": "^3.0.0",
     "ts-jest": "^24.1.0",
     "tslint": "^5.20.0",
-    "typescript": "^3.6.4"
+    "typescript": "^3.7.2"
   },
   "jest": {
     "moduleFileExtensions": [
